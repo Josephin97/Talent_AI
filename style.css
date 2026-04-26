@@ -1,0 +1,177 @@
+:root {
+    --primary: #4f46e5;
+    --bg-light: #f9fafb;
+    --text-main: #111827;
+    --border: #e5e7eb;
+    --success: #10b981;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+}
+
+/* Header Styles */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+.logo span { color: #333; }
+
+.header-tools { display: flex; align-items: center; gap: 20px; }
+
+/* Dashboard Layout */
+.dashboard {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    height: calc(100vh - 70px);
+}
+
+/* Sidebar */
+.resume-manager {
+    background: white;
+    padding: 20px;
+    border-right: 1px solid var(--border);
+}
+
+.upload-zone {
+    border: 2px dashed var(--border);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.resume-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    background: #f3f4f6;
+}
+
+.resume-item.active { border-left: 4px solid var(--primary); background: #eff6ff; }
+.actions i { margin-left: 10px; cursor: pointer; color: #6b7280; }
+.actions i:hover { color: var(--primary); }
+
+/* Workspace Splitting */
+.workspace {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    overflow: hidden;
+}
+
+.pane-header {
+    padding: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    background: white;
+}
+
+/* Preview Pane */
+.preview-pane {
+    background: #525659;
+    overflow-y: auto;
+    padding: 40px;
+}
+
+.pdf-mockup {
+    background: white;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 800px;
+    padding: 50px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.mock-line { height: 10px; background: #eee; margin-bottom: 15px; width: 100%; border-radius: 2px; }
+.mock-line.header { width: 40%; height: 20px; background: #ddd; margin-bottom: 30px; }
+.mock-line.highlight { background: #fef08a; border-left: 3px solid #facc15; }
+
+/* Analysis Pane */
+.analysis-pane {
+    background: white;
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.score-card {
+    text-align: center;
+    padding: 30px;
+}
+
+.score-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 5px solid var(--success);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.check-section {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.check-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.rephrase { flex-direction: column; gap: 5px; background: #f9fafb; padding: 10px; border-radius: 6px; }
+.check-row { display: flex; align-items: center; width: 100%; gap: 10px; }
+.preview-text { font-size: 0.85rem; color: #6b7280; font-style: italic; margin: 0; padding-left: 25px; }
+
+.btn-edit {
+    margin-left: auto;
+    font-size: 0.75rem;
+    background: none;
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.action-footer {
+    padding: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Switch UI */
+.switch { position: relative; display: inline-block; width: 34px; height: 20px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+input:checked + .slider { background-color: var(--success); }
+input:checked + .slider:before { transform: translateX(14px); }
