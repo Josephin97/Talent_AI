@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentAI - Resume Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">Talent<span>AI</span></div>
+        <div class="header-tools">
+            <div class="extension-status">
+                <span>Extension</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <button class="btn-download-ext"><i class="fas fa-download"></i> Get Extension</button>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <section class="resume-manager">
+            <h3>My Resumes (Max 5)</h3>
+            <div class="upload-zone" id="drop-zone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Upload PDF/Docx</p>
+            </div>
+            <div class="resume-list">
+                <div class="resume-item active">
+                    <span class="name">Product_Designer_v1.pdf</span>
+                    <div class="actions">
+                        <i class="fas fa-eye" title="Preview"></i>
+                        <i class="fas fa-download" title="Download"></i>
+                        <i class="fas fa-trash" title="Delete"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="workspace">
+            <div class="preview-pane">
+                <div class="pane-header">Resume Preview</div>
+                <div class="document-viewer">
+                    <div class="pdf-mockup">
+                        <div class="mock-line header"></div>
+                        <div class="mock-line highlight"></div>
+                        <div class="mock-line"></div>
+                        <div class="mock-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analysis-pane">
+                <div class="pane-header">ATS Analysis</div>
+                
+                <div class="score-card">
+                    <div class="score-circle">85%</div>
+                    <p>Match Accuracy</p>
+                </div>
+
+                <div class="check-section">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Missing Information</h4>
+                    <div class="check-item">
+                        <input type="checkbox" id="skill1">
+                        <label for="skill1">Figma (UI/UX Design)</label>
+                    </div>
+                    <div class="check-item">
+                        <input type="checkbox" id="skill2">
+                        <label for="skill2">Adobe XD</label>
+                    </div>
+
+                    <h4><i class="fas fa-pen-nib"></i> Rephrase Suggestions</h4>
+                    <div class="check-item rephrase">
+                        <div class="check-row">
+                            <input type="checkbox" id="rephrase1">
+                            <label for="rephrase1">Increase impact keywords</label>
+                            <button class="btn-edit">Edit</button>
+                        </div>
+                        <p class="preview-text">"Managed a team" → "Led a cross-functional design squad..."</p>
+                    </div>
+
+                    <h4><i class="fas fa-spell-check"></i> Grammar Check</h4>
+                    <div class="check-item">
+                        <input type="checkbox" id="gram1">
+                        <label for="gram1">Replace <b>"Worked"</b> with <b>"Spearheaded"</b></label>
+                    </div>
+                </div>
+
+                <div class="action-footer">
+                    <button class="btn-primary" id="updateBtn">Update Resume</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="successModal" style="display: none;">
+        <div class="modal-content">
+            <h3>Resume Updated!</h3>
+            <p>New ATS Score: <strong>94%</strong></p>
+            <div class="modal-btns">
+                <button class="btn-secondary">Keep Both</button>
+                <button class="btn-primary">Replace Original</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
